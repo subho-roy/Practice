@@ -1,0 +1,33 @@
+<p>registration works!</p>
+
+<div class="container">
+    <form [formGroup]="frmgrp" (ngSubmit)="submit()" >
+        <div>
+            <label for="">FIRST NAME
+            </label>
+            <input type="text" formControlName="first_name">
+        </div>
+        <div>
+            <label for="">LAST NAME
+            </label>
+            <input type="text" formControlName="last_name">
+        </div>
+        <div>
+            <label for="">EMAIL
+            </label>
+            <input type="email" formControlName="email">
+        </div>
+        <div>
+            <label for="">PASSWORD
+            </label>
+            <input type="password" formControlName="password">
+        </div>
+        <div>
+            <label for="">PROFILE PIC
+            </label>
+            <input type="file" formControlName="profile_pic" (change)="fileselected($event)">
+        </div>
+
+        <input type="submit" value="submit">
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<p>r-form works!</p>
+<div class="container">
+    <form [formGroup]="FormG" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label>NAME :</label>
+            <input type="text" class="form-control" formControlName="fname">
+        </div>
+        <div class="form-group">
+            <label>NAME :</label>
+            <input type="text" class="form-control" formControlName="lname">
+        </div>
+        <button (click)="addemail()"> add email</button>
+        <div formArrayName="email">
+            <div class="form-group" *ngFor="let item of mail.controls ,let i=index">
+                <label>EMAIL:</label>
+                <input type="text" class="form-control" [formControlName]="i">
+                <button (click)="remove(i)"></button>
+            </div>
+        </div>
+        <input type="submit" value="submit">
+       
+    </form>
+</div>
